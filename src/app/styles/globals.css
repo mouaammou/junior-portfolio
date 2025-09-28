@@ -1,26 +1,272 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* pallete link */
+/* https://colorhunt.co/palette/37353e44444e715a5ad3dad9 
+https://colorhunt.co/palette/222831393e46948979dfd0b8
+*/
+
+/* 
+********************************* poppins
+                                                    ******************************/
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* 
+********************************* source code pro 
+                                                    ******************************/
+.source-code-thin {
+  font-family: "Source Code Pro";
+  font-weight: 100;
+  font-style: normal;
+}
+
+.source-code-extralight {
+  font-family: "Source Code Pro";
+  font-weight: 200;
+  font-style: normal;
+}
+
+.source-code-light {
+  font-family: "Source Code Pro";
+  font-weight: 300;
+  font-style: normal;
+}
+
+.source-code-regular {
+  font-family: "Source Code Pro";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.source-code-medium {
+  font-family: "Source Code Pro";
+  font-weight: 500;
+  font-style: normal;
+}
+
+.source-code-semibold {
+  font-family: "Source Code Pro";
+  font-weight: 600;
+  font-style: normal;
+}
+
+.source-code-bold {
+  font-family: "Source Code Pro";
+  font-weight: 700;
+  font-style: normal;
+}
+
+.source-code-extrabold {
+  font-family: "Source Code Pro";
+  font-weight: 800;
+  font-style: normal;
+}
+
+.source-code-black {
+  font-family: "Source Code Pro";
+  font-weight: 900;
+  font-style: normal;
+}
+
+.source-code-thin-italic {
+  font-family: "Source Code Pro";
+  font-weight: 100;
+  font-style: italic;
+}
+
+.source-code-extralight-italic {
+  font-family: "Source Code Pro";
+  font-weight: 200;
+  font-style: italic;
+}
+
+.source-code-light-italic {
+  font-family: "Source Code Pro";
+  font-weight: 300;
+  font-style: italic;
+}
+
+.source-code-regular-italic {
+  font-family: "Source Code Pro";
+  font-weight: 400;
+  font-style: italic;
+}
+
+.source-code-medium-italic {
+  font-family: "Source Code Pro";
+  font-weight: 500;
+  font-style: italic;
+}
+
+.source-code-semibold-italic {
+  font-family: "Source Code Pro";
+  font-weight: 600;
+  font-style: italic;
+}
+
+.source-code-bold-italic {
+  font-family: "Source Code Pro";
+  font-weight: 700;
+  font-style: italic;
+}
+
+.source-code-extrabold-italic {
+  font-family: "Source Code Pro";
+  font-weight: 800;
+  font-style: italic;
+}
+
+.source-code-black-italic {
+  font-family: "Source Code Pro";
+  font-weight: 900;
+  font-style: italic;
+}
+
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-background: #222831;
+  --color-foreground: #D3DAD9;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-poppins: "Poppins", sans-serif; 
+  --font-source-code-pro: "Source Code Pro";
+
+  --text-big: 7rem
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, li {
+  @apply font-poppins
+}
+
+p, a, input {
+  @apply font-source-code-pro
+}
+
+.top-sidebar > .title > span {
+  @apply font-bold;
+}
+
+.sidebar {
+  @apply flex flex-col justify-between sticky top-0 w-10 md:w-72 p-5;
+}
+
+.sidebar::after {
+  content: '';
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #555c68;
 }
