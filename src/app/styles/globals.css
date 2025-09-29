@@ -241,11 +241,10 @@ https://colorhunt.co/palette/222831393e46948979dfd0b8
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  max-height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6, li {
+h1, h2, h3, h4, h5, h6 {
   @apply font-poppins
 }
 
@@ -255,10 +254,6 @@ p, a, input {
 
 .top-sidebar > .title > span {
   @apply font-bold;
-}
-
-.sidebar {
-  @apply flex flex-col justify-between sticky top-0 w-10 md:w-72 p-5;
 }
 
 .sidebar::after {
