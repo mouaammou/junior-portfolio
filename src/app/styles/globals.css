@@ -248,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
   @apply font-poppins
 }
 
-p, a, input {
+p, a, input , li{
   @apply font-source-code-pro
 }
 
