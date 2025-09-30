@@ -1,15 +1,23 @@
-import Hello from "@/components/layout/hello";
-import Sidebar from "@/components/layout/sidebar";
-import VantaBackground from "@/components/ui/vantaBackground";
-
 export default function Home() {
   return (
     <div className="flex min-h-screen">
-      <VantaBackground />
-      {/* sidebar */}
-      <Sidebar />
       {/* main content */}
-      <Hello />
+      <main className="relative flex-1 flex justify-center items-center">
+        <div className="lg:w-[50%] p-3 md:p-10">
+          <h1 className="text-7xl md:text-big font-black mb-4">Hello</h1>
+          <div className="space-y-4">
+            <p className="text-lg w-full">
+              - I’m a full-stack web developer focused on building modern, scalable, and conversion-oriented applications.
+            </p>
+            <p className="text-lg">
+              - With Next.js, React, TypeScript, and Supabase, I turn ideas into fast, reliable, and growth-driven products.
+            </p>
+          </div>
+          <button className="underline_effect absolute right-[30%] mt-10 p-2 text-xl capitalize cursor-pointer">
+            view work
+          </button>
+        </div>
+      </main>
     </div>
   );
 }

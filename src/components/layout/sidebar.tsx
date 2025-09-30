@@ -14,7 +14,7 @@ type NavItem = { label: string, href: string };
 type SocialItem = { label: string, href: string, icon: IconType }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'About', href: "#about" },
+  { label: 'About', href: "/about" },
   { label: 'Work', href: "#work" },
   { label: 'Curriculum', href: "#curriculum" },
   { label: 'Contact', href: "#contact" },
@@ -86,7 +86,7 @@ export default function Sidebar() {
             {
               NAV_ITEMS.map(({ label, href }, index) => (
                 <li key={label}
-                className={`${activeIndex === index && 'text-3xl transition-all ease-in duration-300 ml-10 w-fit border-b-3 border-amber-700'}`}
+                className={`${activeIndex === index && 'text-3xl transition-all ease-in duration-300 ml-10 w-fit'}`}
                 >
                   <Link
                     onClick={()=> setActiveIndex(index)}

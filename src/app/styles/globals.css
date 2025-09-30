@@ -279,3 +279,14 @@ p, a, input , li{
 .underline_effect:hover::after {
   width: 100%;
 }
+
+.tiri_8::before {
+    content: "";
+    background-color: #fff;
+    border-radius: 6.25rem;
+    height: 2px;
+    left: -28px;
+    position: absolute;
+    top: 15px;
+    width: 18px;
+}
