@@ -17,7 +17,6 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'About', href: "/about" },
   { label: 'Work', href: "#work" },
   { label: 'Curriculum', href: "#curriculum" },
-  { label: 'Contact', href: "#contact" },
 ]
 
 const SOCIAL_LINKS: SocialItem[] = [
@@ -86,7 +85,7 @@ export default function Sidebar() {
             {
               NAV_ITEMS.map(({ label, href }, index) => (
                 <li key={label}
-                className={`${activeIndex === index && 'text-3xl transition-all ease-in duration-300 ml-10 w-fit'}`}
+                className={`${activeIndex === index && 'text-2xl transition-all ease-in duration-300 ml-5 w-fit border-b'}`}
                 >
                   <Link
                     onClick={()=> setActiveIndex(index)}
