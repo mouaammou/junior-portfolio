@@ -1,189 +1,145 @@
 'use client';
 
+import React, { useEffect, useRef, useState } from 'react';
+import { GraduationCap, Briefcase, Code } from 'lucide-react';
+
 const CURRI_NODES = [
    {
       id: 1,
-      x: 20,
-      y: 15,
-      size: 'large',
-      icon: 'GraduationCap',
-      color: 'from-blue-500 to-cyan-500',
-      title: "Master's in Computer Science",
-      subtitle: "University Name",
-      period: "2020 - 2022",
-      details: "Specialized in AI and Machine Learning with thesis on Neural Networks. GPA: 3.8/4.0",
-      type: "education"
+      year: 2018,
+      title: "Baccalaureate in Physical Sciences",
+      period: "2018",
+      description: "Focused on the fundamentals of Physical Sciences and Mathematical Theory",
+      type: "education",
+      icon: "education"
    },
    {
       id: 2,
-      x: 50,
-      y: 30,
-      size: 'xlarge',
-      icon: 'Briefcase',
-      color: 'from-purple-500 to-pink-500',
-      title: "Senior Full Stack Developer",
-      subtitle: "Tech Corp",
-      period: "2022 - Present",
-      details: "Leading development of scalable web applications. Improved performance by 40%, mentored team of 5 developers.",
-      type: "experience"
+      year: 2019,
+      title: "Bachelor in Mathematics and Computer Science - SMI",
+      period: "2019 - 2021",
+      description: "Study Discrete Mathematics and Algorithmic Theory for Computer Science applications.",
+      type: "education",
+      icon: "education"
    },
    {
       id: 3,
-      x: 75,
-      y: 55,
-      size: 'medium',
-      icon: 'Code',
-      color: 'from-green-500 to-emerald-500',
-      title: "Frontend Developer",
-      subtitle: "Digital Agency",
-      period: "2020 - 2022",
-      details: "Built 15+ client projects, reduced load time by 50%, implemented design system.",
-      type: "experience"
+      year: 2022,
+      title: "Junior Software Engineer - 1337",
+      period: "2022 - 2024",
+      description: "Advanced studies in computer science, specializing in software engineering.",
+      type: "education",
+      icon: "education"
    },
    {
       id: 4,
-      x: 25,
-      y: 65,
-      size: 'large',
-      icon: 'GraduationCap',
-      color: 'from-orange-500 to-red-500',
-      title: "Bachelor's in Software Engineering",
-      subtitle: "Tech University",
-      period: "2016 - 2020",
-      details: "Focus on web technologies and software architecture. GPA: 3.6/4.0",
-      type: "education"
+      year: 2024,
+      title: "Frontend Developer - Exchange Lab",
+      period: "2024 - 2025",
+      description: "Develop a high-performance, School Management System using the Next.js framework for the frontend and API layers. The system will rely on Supabase for secure, low-latency data operations, including PostgreSQL database management, real-time synchronization, and authentication.",
+      type: "experience",
+      icon: "work"
    },
    {
       id: 5,
-      x: 65,
-      y: 10,
-      size: 'medium',
-      icon: 'Award',
-      color: 'from-yellow-500 to-orange-500',
-      title: "AWS Certified Developer",
-      subtitle: "Amazon Web Services",
-      period: "2023",
-      details: "Professional certification in cloud development and architecture.",
-      type: "certification"
+      year: 2025,
+      title: "Software Engineer - OCP MAINTENCE SOLUTIONS",
+      period: "2025 - Present",
+      description: "Develop a centralized Dashboard System for OCP Maintenance Solutions designed to streamline internal calculations and eliminate reliance on manual data entry, thereby improving operational efficiency and data accuracy.",
+      type: "experience",
+      icon: "work"
    },
-   {
-      id: 6,
-      x: 45,
-      y: 75,
-      size: 'small',
-      icon: 'Users',
-      color: 'from-indigo-500 to-purple-500',
-      title: "Junior Developer Intern",
-      subtitle: "Startup Inc",
-      period: "2019 - 2020",
-      details: "Contributed to 3 major features, fixed 100+ bugs, learned agile methodology.",
-      type: "experience"
-   }
 ];
 
+
 const Curriculum = () => {
+   const [activeNode, setActiveNode] = useState<number>(1);
+   const openingInterval = useRef<NodeJS.Timeout | null>(null);
+
+   const getNodeIcon = (type: string) => {
+      switch (type) {
+         case 'education': return <GraduationCap className="h-6 w-6 text-yellow-300" />;
+         case 'experience': return <Briefcase className="h-6 w-6 text-yellow-300" />;
+         default: return <Code className="h-6 w-6 text-yellow-300" />;
+      }
+   };
+
+   useEffect(() => {
+      openingInterval.current = setInterval(() => {
+         //randon index between 1 and curri_nodes.legth
+         let randomIndex = Math.floor(Math.random() * CURRI_NODES.length) + 1;
+         setActiveNode(randomIndex);
+      }, 5000);
+
+      return (() => {
+         if (openingInterval.current) {
+            clearInterval(openingInterval.current);
+         }
+      })
+   }, [])
+
+   const handleCardOpening = (id: number) => {
+      setActiveNode(activeNode === id ? 1 : id)
+      if (openingInterval.current) {
+         clearInterval(openingInterval.current);
+         openingInterval.current = null;
+      }
+   }
+
    return (
-      <div className="flex flex-col lg:ml-52 min-h-screen overflow-scroll no-scrollbar">
+      <div className="flex flex-col lg:ml-52 mb-30">
          <header>
-            <h1 className=" text-4xl md:text-big font-black my-4 mt-20">Curriculum</h1>
-            <p className="tiri_8  relative ml-10 text-lg">my education & some of my experiences</p>
+            <h1 className="text-4xl md:text-big font-black my-4 mt-20">Curriculum</h1>
+            <p className="tiri_8 relative ml-10 text-lg">my education & professional journey</p>
          </header>
-         <main className="flex justify-center items-center mt-10">
+
+         <main className="mt-16 px-4">
+            {/* Timeline */}
             <div className="relative">
-               <div className="absolute top-0 -left-24 lg:right-1/2">
-                  <svg width="200" height="200" viewBox="0 0 100 100">
-                     <circle
-                        cx="50"
-                        cy="50"
-                        r="45"
-                        fill="black"
-                        stroke="gold"
-                        strokeWidth="5"
-                        id="my-circle"
-                     />
-                  </svg>
-                  <p className="absolute top-20 left-17 font-black text-2xl capitalize">hello</p>
-               </div>
+               {/* Vertical line */}
+               <div className="absolute left-4 lg:left-1/2 h-full w-1 bg-gradient-to-b from-yellow-300 to-yellow-700/70 transform -translate-x-1/2"></div>
 
-               {/* line that will connect */}
-               <div className="absolute top-44 left-10">
-                  <svg height="200" width="300" xmlns="http://www.w3.org/2000/svg">
-                     <line x1="10" y1="0" x2="250" y2="200"
-                        stroke="gold"
-                        strokeWidth="5" />
-                  </svg>
-               </div>
+               {/* Timeline nodes */}
+               {CURRI_NODES.map((node, index) => (
+                  <div
+                     key={node.id}
+                     className={`flex mb-12 relative ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}
+                  >
+                     {/* Date indicator */}
+                     <div className="lg:w-1/2 mb-4 lg:mb-0 px-8 absolute -top-6 ">
+                        <span className="font-semibold  text-yellow-300">{node.period}</span>
+                     </div>
 
-               <div className="absolute top-[20rem] -left-24 lg:left-44">
-                  <svg width="200" height="200" viewBox="0 0 100 100">
-                     <circle
-                        cx="50"
-                        cy="50"
-                        r="45"
-                        fill="black"
-                        stroke="gold"
-                        strokeWidth="5"
-                        id="my-circle"
-                     />
-                  </svg>
-                  <p className="absolute top-20 left-17 font-black text-2xl capitalize">hello</p>
-               </div>
+                     {/* Node circle */}
+                     <div className="absolute left-4 lg:left-1/2 w-8 h-8 bg-background
+                        flex items-center justify-center transform -translate-x-1/2 z-10">
+                        {getNodeIcon(node.type)}
+                     </div>
 
-
-               <div className="absolute top-[30rem] -left-24 lg:right-1/3">
-                  <svg width="200" height="200" viewBox="0 0 100 100">
-                     <circle
-                        cx="50"
-                        cy="50"
-                        r="45"
-                        fill="black"
-                        stroke="gold"
-                        strokeWidth="5"
-                        id="my-circle"
-                     />
-                  </svg>
-                  <p className="absolute top-20 left-17 font-black text-2xl capitalize">hello</p>
-               </div>
-
-
-               {/* line that will connect */}
-               <div className="absolute top-[20rem] left-24">
-                  <svg height="300" width="200" xmlns="http://www.w3.org/2000/svg">
-                     <line  x1="0" y1="270" x2="90" y2="90"
-                        stroke="gold"
-                        strokeWidth="5" />
-                        {/* <line x1="0" y1="263" x2="120" y2="22" stroke="gold" stroke-width="5"></line> */}
-                  </svg>
-               </div>
-               
-
-  {/* line that will connect */}
-               <div className="absolute top-[30rem] -left-24 lg:right-1/2">
-                  <svg height="300" width="200" xmlns="http://www.w3.org/2000/svg">
-                     <line x1="26" y1="99" x2="36" y2="300"
-                        stroke="gold"
-                        strokeWidth="5" />
-                  </svg>
-               </div>
-
-               <div className="absolute top-[50rem] -left-24 lg:right-1/2">
-                  <svg width="200" height="200" viewBox="0 0 100 100">
-                     <circle
-                        cx="50"
-                        cy="50"
-                        r="45"
-                        fill="black"
-                        stroke="gold"
-                        strokeWidth="5"
-                        id="my-circle"
-                     />
-                  </svg>
-                  <p className="absolute top-20 left-17 font-black text-2xl capitalize">hello</p>
-               </div>
+                     {/* Content card */}
+                     <div className={`lg:w-1/2 pl-12 lg:pl-8  ${index % 2 === 0 ? 'lg:pr-8 lg:text-right' : ''}`}>
+                        <div
+                           className="p-4 m-2 bg-background border border-yellow-400/30 rounded-lg shadow-lg hover:shadow-yellow-400/20 
+                           transition-all duration-300 cursor-pointer text-left"
+                           onClick={() => handleCardOpening(node.id)}
+                        >
+                           <h3 className="text-lg  my-1">{node.title}</h3>
+                           <div
+                              className={`overflow-hidden transition-all duration-300 ease-in-out ${activeNode === node.id
+                                 ? 'max-h-40 opacity-100 mt-2'
+                                 : 'max-h-0 opacity-0'
+                                 }`}
+                           >
+                              <p className="text-gray-400">{node.description}</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               ))}
             </div>
          </main>
       </div>
-   )
-}
+   );
+};
 
 export default Curriculum;

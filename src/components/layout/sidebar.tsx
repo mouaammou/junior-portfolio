@@ -15,7 +15,7 @@ type SocialItem = { label: string, href: string, icon: IconType }
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'About', href: "/about" },
-  { label: 'Work', href: "#work" },
+  { label: 'Work', href: "/work" },
   { label: 'Curriculum', href: "/curriculum" },
 ]
 
