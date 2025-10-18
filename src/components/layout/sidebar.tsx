@@ -55,10 +55,10 @@ export default function Sidebar() {
   }, [isDesktop])
 
   return (
-    <aside className={`sidebar flex flex-col justify-between fixed h-full top-0 left-0 p-5 z-50 transition-all duration-150 ease-in  ${expanded ? "w-72" : "w-24 lg:w-72"} ${isOpen && 'bg-background/80'}`}>
+    <aside className={`sidebar flex flex-col justify-between fixed h-full top-0 left-0 p-5 z-50 transition-all duration-150 ease-in  ${expanded ? "w-72" : "w-14 lg:w-72"} ${isOpen && 'bg-background/80'}`}>
 
       {/* top sidebar */}
-      <Link className="top-sidebar space-y-3" href="/" onClick={() => setActiveIndex(-1)}>
+      <Link className="top-sidebar space-y-3 w-full" href="/" onClick={() => setActiveIndex(-1)}>
         {expanded ? <>
           <h1 className="title uppercase text-xl">
             <span>M</span>oua<span>d</span> Ou<span>aa</span>mmo<span>u</span>
@@ -66,7 +66,7 @@ export default function Sidebar() {
           <h3>Creative Web Developer</h3>
         </>
           :
-          <h1 className="title uppercase text-xl"><span>M</span>O</h1>
+          <h1 className="title uppercase text-xl absolute left-3"><span>M</span>O</h1>
         }
       </ Link>
 
@@ -75,7 +75,7 @@ export default function Sidebar() {
         onClick={() => setIsOpen(!isOpen)}
         className="cursor-pointer lg:hidden"
       >
-        {!isOpen ? <RiMenuFold4Line size={30} className="absolute top-[50%] left-8 " /> : <IoIosArrowDropleft size={40} className="absolute top-[50%] right-1 " />}
+        {!isOpen ? <RiMenuFold4Line size={30} className="absolute top-[50%] left-3 " /> : <IoIosArrowDropleft size={40} className="absolute top-[50%] right-1 " />}
       </button>
 
       {/* Nav Links */}

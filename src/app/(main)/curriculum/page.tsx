@@ -88,7 +88,7 @@ const Curriculum = () => {
 
    return (
       <div className="flex flex-col lg:ml-52 mb-30">
-         <header>
+         <header className='ml-2 sm:ml-9'>
             <h1 className="text-4xl md:text-big font-black my-4 mt-20">Curriculum</h1>
             <p className="tiri_8 relative ml-10 text-lg">my education & professional journey</p>
          </header>

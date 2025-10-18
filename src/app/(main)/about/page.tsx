@@ -1,7 +1,7 @@
 const AboutMe = () => {
 
    return (
-      <div className="flex min-h-screen flex-col lg:ml-60 px-2 md:p-10">
+      <div className="flex min-h-screen flex-col lg:ml-60">
          {/* top section */}
          <div className="relative flex justify-start items-start  mt-20 flex-col">
             <h1 className="text-7xl md:text-big font-black mb-4">About</h1>

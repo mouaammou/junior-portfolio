@@ -40,7 +40,7 @@ export default function RootLayout({
         <VantaBackground />
         {/* sidebar */}
         <Sidebar />
-        <div className="ml-24">
+        <div className="ml-14">
           {children}
         </div>
       </body>
