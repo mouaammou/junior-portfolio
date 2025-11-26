@@ -26,8 +26,7 @@ export default function CarouselCard({ project }: { project: Project }) {
                alt={project.screenshots[currentIndex].alt}
                width={1200}
                height={800}
-               sizes="(min-width: 640px) 90vw, 100vw"
-               className="w-full h-[40rem] object-cover"
+               className="w-full object-cover"
                priority
             />
          </div>

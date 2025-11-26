@@ -15,18 +15,18 @@ export default function Work() {
           {projects.map((data, index) => {
             return (
               <Link
-                className={`${data.id % 2 === 1 && "mt-10 lg:mt-40"}`}
+                className={`mt-10  ${data.id % 2 === 0 && "lg:mt-40"}`}
                 key={index}
                 href={`/work/${encodeURIComponent(data.slug)}`}
               >
                 <h1 className="mb-3 font-semibold">{data.slug}</h1>
-                <div className="max-w-[25rem] w-full max-h-[20rem] h-full overflow-hidden cursor-pointer group">
+                <div className="w-80 lg:w-100 h-full overflow-hidden cursor-pointer group">
                   <Image
                     width={200}
                     height={100}
                     src={data.thumbnailImage}
                     alt={data.title}
-                    className="w-[25rem] h-[20rem] transition-transform duration-500 ease-out group-hover:scale-110 object-cover"
+                    className="w-full transition-transform duration-500 ease-out group-hover:scale-110 object-cover"
                   />
                 </div>
               </Link>
