@@ -2,6 +2,8 @@
 import { Project } from "@/data/projects";
 import Image from "next/image";
 import { useState } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+
 
 export default function CarouselCard({ project }: { project: Project }) {
 
@@ -20,13 +22,13 @@ export default function CarouselCard({ project }: { project: Project }) {
 
    return (
       <section className="relative">
-         <div className="overflow-hidden rounded-lg">
+         <div className="overflow-hidden rounded-lg max-w-320 max-h-200 w-full h-full">
             <Image
                src={project.screenshots[currentIndex].src}
                alt={project.screenshots[currentIndex].alt}
                width={1200}
                height={800}
-               className="w-full object-cover"
+               className="max-w-320 max-h-200 w-full h-full object-cover border border-gray-500"
                priority
             />
          </div>
@@ -36,17 +38,17 @@ export default function CarouselCard({ project }: { project: Project }) {
             <>
                <button
                   onClick={prevSlide}
-                  className="absolute left-0 cursor-pointer top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-r-lg"
+                  className="absolute -left-3 cursor-pointer top-1/2 -translate-y-1/2 bg-gradient-to-r from-yellow-400 to-yellow-500 p-3 text-black rounded-full hover:shadow-lg hover:shadow-yellow-400/50 transition-all duration-300 hover:scale-110"
                   aria-label="Previous image"
                >
-                  ←
+                  <FaArrowLeft className="h-5 w-5" />
                </button>
                <button
                   onClick={nextSlide}
-                  className="absolute right-0 cursor-pointer top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-l-lg"
+                  className="absolute -right-5 cursor-pointer top-1/2 -translate-y-1/2 bg-gradient-to-r from-yellow-500 to-yellow-400 p-3 text-black rounded-full hover:shadow-lg hover:shadow-yellow-400/50 transition-all duration-300 hover:scale-110"
                   aria-label="Next image"
                >
-                  →
+                  <FaArrowRight className="h-5 w-5" />
                </button>
 
                {/* Indicators */}
@@ -55,7 +57,7 @@ export default function CarouselCard({ project }: { project: Project }) {
                      <button
                         key={index}
                         onClick={() => setCurrentIndex(index)}
-                        className={`w-2 h-2 rounded-full ${index === currentIndex ? "bg-yellow-300" : "bg-gray-400"
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-yellow-300 w-8" : "bg-gray-400 hover:bg-gray-500"
                            }`}
                         aria-label={`Go to slide ${index + 1}`}
                      />

@@ -227,6 +227,9 @@ https://colorhunt.co/palette/222831393e46948979dfd0b8
   font-style: italic;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 @theme inline {
   --color-background: #222222;
