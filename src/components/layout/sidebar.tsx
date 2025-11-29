@@ -20,9 +20,9 @@ const NAV_ITEMS: NavItem[] = [
 ]
 
 const SOCIAL_LINKS: SocialItem[] = [
-  { label: 'Linkedin', href: "#linkedin", icon: SiLinkedin },
-  { label: 'Github', href: "#github", icon: FiGithub },
-  { label: 'eMail', href: "#email", icon: HiOutlineMailOpen },
+  { label: 'Linkedin', href: "https://www.linkedin.com/in/mouad-ouaammou-36a7b8175", icon: SiLinkedin },
+  { label: 'Github', href: "https://github.com/mouaammou/", icon: FiGithub },
+  { label: 'eMail', href: "mailto:jsamassine@gmail.com", icon: HiOutlineMailOpen },
 ]
 
 function useMediaQuery(query: string) {
