@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { GraduationCap, Briefcase, Code } from 'lucide-react';
+import * as motion from "motion/react-client";
 
 const CURRI_NODES = [
    {
@@ -66,7 +67,6 @@ const Curriculum = () => {
 
    useEffect(() => {
       openingInterval.current = setInterval(() => {
-         //randon index between 1 and curri_nodes.legth
          let randomIndex = Math.floor(Math.random() * CURRI_NODES.length) + 1;
          setActiveNode(randomIndex);
       }, 5000);
@@ -87,54 +87,104 @@ const Curriculum = () => {
    }
 
    return (
-      <div className="flex flex-col lg:ml-52 mb-30">
-         <header className='ml-2 sm:ml-9'>
+      <div className="flex flex-col lg:ml-52 mb-30 overflow-x-hidden">
+         <motion.header 
+            className='ml-2 sm:ml-9'
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+         >
             <h1 className="text-4xl md:text-big font-black my-4 mt-20">Curriculum</h1>
-            <p className="tiri_8 relative ml-10 md:text-2xl">my education & professional journey</p>
-         </header>
+            <motion.p 
+               className="tiri_8 relative ml-10 md:text-2xl"
+               initial={{ opacity: 0, x: -20 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{ duration: 0.6, delay: 0.2 }}
+            >
+               my education & professional journey
+            </motion.p>
+         </motion.header>
 
          <main className="mt-16 px-4">
             {/* Timeline */}
             <div className="relative">
                {/* Vertical line */}
-               <div className="absolute left-4 lg:left-1/2 h-full w-1 bg-gradient-to-b from-yellow-300 to-yellow-700/70 transform -translate-x-1/2"></div>
+               <motion.div 
+                  className="absolute left-4 lg:left-1/2 h-full w-1 bg-gradient-to-b from-yellow-300 to-yellow-700/70 transform -translate-x-1/2"
+                  initial={{ scaleY: 0 }}
+                  animate={{ scaleY: 1 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  style={{ transformOrigin: "top" }}
+               />
 
                {/* Timeline nodes */}
                {CURRI_NODES.map((node, index) => (
-                  <div
+                  <motion.div
                      key={node.id}
                      className={`flex mb-12 relative ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}
+                     initial={{ opacity: 0, y: 30 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true, amount: 0.3 }}
+                     transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                   >
                      {/* Date indicator */}
-                     <div className="lg:w-1/2 mb-4 lg:mb-0 px-8 absolute -top-6 ">
-                        <span className="font-semibold  text-yellow-300">{node.period}</span>
-                     </div>
+                     <motion.div 
+                        className="lg:w-1/2 mb-4 lg:mb-0 px-8 absolute -top-6"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
+                     >
+                        <span className="font-semibold text-yellow-300">{node.period}</span>
+                     </motion.div>
 
                      {/* Node circle */}
-                     <div className="absolute left-4 lg:left-1/2 w-8 h-8 bg-background
-                        flex items-center justify-center transform -translate-x-1/2 z-10">
+                     <motion.div 
+                        className="absolute left-4 lg:left-1/2 w-8 h-8 bg-background
+                           flex items-center justify-center transform -translate-x-1/2 z-10"
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ 
+                           type: "spring", 
+                           stiffness: 300, 
+                           damping: 20,
+                           delay: index * 0.1 + 0.3 
+                        }}
+                        whileHover={{ scale: 1.2, rotate: 360 }}
+                     >
                         {getNodeIcon(node.type)}
-                     </div>
+                     </motion.div>
 
                      {/* Content card */}
-                     <div className={`lg:w-1/2 pl-12 lg:pl-8  ${index % 2 === 0 ? 'lg:pr-8 lg:text-right' : ''}`}>
-                        <div
+                     <div className={`lg:w-1/2 pl-12 lg:pl-8 ${index % 2 === 0 ? 'lg:pr-8 lg:text-right' : ''}`}>
+                        <motion.div
                            className="p-4 m-2 bg-background border border-yellow-400/30 rounded-lg shadow-lg hover:shadow-yellow-400/20 
                            transition-all duration-300 cursor-pointer text-left"
                            onClick={() => handleCardOpening(node.id)}
+                           whileHover={{ 
+                              scale: 1.02,
+                              borderColor: "rgba(250, 204, 21, 0.6)",
+                              boxShadow: "0 0 20px rgba(250, 204, 21, 0.3)"
+                           }}
+                           transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         >
                            <h3 className="md:text-xl font-semibold my-1">{node.title}</h3>
-                           <div
-                              className={`overflow-hidden transition-all duration-300 ease-in-out ${activeNode === node.id
-                                 ? 'max-h-40 opacity-100 mt-2'
-                                 : 'max-h-0 opacity-0'
-                                 }`}
+                           <motion.div
+                              className="overflow-hidden"
+                              initial={false}
+                              animate={{
+                                 maxHeight: activeNode === node.id ? 160 : 0,
+                                 opacity: activeNode === node.id ? 1 : 0,
+                                 marginTop: activeNode === node.id ? 8 : 0
+                              }}
+                              transition={{ duration: 0.3, ease: "easeInOut" }}
                            >
                               <p className="text-gray-400">{node.description}</p>
-                           </div>
-                        </div>
+                           </motion.div>
+                        </motion.div>
                      </div>
-                  </div>
+                  </motion.div>
                ))}
             </div>
          </main>

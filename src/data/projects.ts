@@ -35,7 +35,7 @@ export const projects: Project[] = [
     slug: 'ft-transcendence',
     title: 'FT_Transcendence',
     tagline: 'Real-time multiplayer Pong game with authentication & chat',
-    role: 'Full Stack Developer - Final project',
+    role: 'Full Stack Developer',
     description:
       'A real-time multiplayer Pong game featuring authentication, friend management, chat rooms, and live game sessions. Built following 1337’s peer-learning methodologies with focus on real-time communication and clean architecture.',
     thumbnailImage: '/projects/project-2/background.png',
@@ -48,7 +48,7 @@ export const projects: Project[] = [
       { src: '/projects/project-2/6.png', alt: 'Chat system' },
       { src: '/projects/project-2/7.png', alt: 'Chat system' },
     ],
-    website: null
+    website: "https://github.com/mouaammou/ft_transcendence"
   },
 
   {
