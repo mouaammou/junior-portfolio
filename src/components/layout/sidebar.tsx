@@ -54,11 +54,18 @@ export default function Sidebar() {
     if (isDesktop) setIsOpen(false);
   }, [isDesktop])
 
+  const handleNavClick = (index: number) => {
+    setActiveIndex(index);
+    if (!isDesktop) {
+      setIsOpen(false);
+    }
+  };
+
   return (
     <aside className={`sidebar flex flex-col justify-between fixed h-full top-0 left-0 p-5 z-50 transition-all duration-150 ease-in  ${expanded ? "w-72" : "w-14 lg:w-72"} ${isOpen && 'bg-background/80'}`}>
 
       {/* top sidebar */}
-      <Link className="top-sidebar space-y-3 w-full" href="/" onClick={() => setActiveIndex(-1)}>
+      <Link className="top-sidebar space-y-3 w-full" href="/" onClick={() => handleNavClick(-1)}>
         {expanded ? <>
           <h1 className="title uppercase text-xl">
             <span>M</span>oua<span>d</span> Ou<span>aa</span>mmo<span>u</span>
@@ -88,7 +95,7 @@ export default function Sidebar() {
                 className={`${activeIndex === index && 'text-2xl transition-all ease-in duration-300 ml-5 w-fit border-b'}`}
                 >
                   <Link
-                    onClick={()=> setActiveIndex(index)}
+                    onClick={() => handleNavClick(index)}
                     href={href}
                     className={`relative w-fit cursor-pointer`}
                   >
