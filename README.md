@@ -124,7 +124,6 @@ Hi! I'm **Mouad Ouaammou**, a passionate developer with **2+ years of experience
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mouad-ouaammou-36a7b8175/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mouaammou/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jsamassine@gmail.com)
-[![Phone](https://img.shields.io/badge/Phone-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](tel:+212682833677)
 
 📍 **Casablanca, Morocco**
 
