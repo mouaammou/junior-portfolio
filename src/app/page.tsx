@@ -26,7 +26,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             >
-              - I'm a <span className="bg-blue-600 capitalize p-1">full-stack web developer</span> focused on building modern, scalable, and conversion-oriented applications.
+              - I&apos;m a <span className="bg-blue-600 capitalize p-1">full-stack web developer</span> focused on building modern, scalable, and conversion-oriented applications.
             </motion.p>
 
             <motion.p

@@ -34,7 +34,7 @@ const AboutMe = () => {
                transition={{ duration: 0.7, ease: "easeOut" }}
             >
                <motion.img 
-                  src="/mouaad.jpg" 
+                  src="/mouaad.JPG" 
                   alt="profile page" 
                   className="w-80 mx-auto md:w-[50rem] bg-black/30 p-1 shadow-inner shadow-gray-500"
                   whileHover={{ scale: 1.02, rotate: 1 }}
