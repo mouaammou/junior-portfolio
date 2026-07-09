@@ -57,7 +57,7 @@ export default function Navbar() {
       >
         <Link
           href="/"
-          className="nav-display text-xl font-bold uppercase tracking-tight text-foreground"
+          className="nav-display text-lg font-bold uppercase tracking-tight text-foreground"
           onClick={() => setIsOpen(false)}
         >
           Moua<span className="text-[var(--signal)]">d</span>.
@@ -71,7 +71,7 @@ export default function Navbar() {
               <Link
                 key={label}
                 href={href}
-                className={`nav-mono group relative py-1 text-lg tracking-wide transition-colors duration-300 ${
+                className={`nav-mono group relative py-1 text-sm tracking-wide transition-colors duration-300 ${
                   active ? "text-[var(--signal)]" : "text-foreground/75 hover:text-foreground"
                 }`}
               >

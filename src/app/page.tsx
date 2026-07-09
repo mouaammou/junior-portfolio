@@ -69,14 +69,14 @@ export default function Home() {
               {"// FULL-STACK ENGINEER"}
             </motion.p>
 
-            <h1 className="pf-display text-6xl font-bold leading-[0.98] tracking-tight md:text-8xl">
+            <h1 className="pf-display text-lg font-bold leading-[0.98] tracking-tight md:text-8xl">
               I build things
               <br />
               that work.
             </h1>
 
             <motion.p
-              className="mt-7 max-w-xl text-2xl leading-[1.7] text-[var(--muted)] md:text-[1.6rem]"
+              className="mt-7 max-w-xl text-sm leading-[1.7] text-[var(--muted)] md:text-[1.6rem]"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -93,7 +93,7 @@ export default function Home() {
             >
               <Link href="/work">
                 <motion.button
-                  className="group flex items-center gap-3 border border-[var(--ink)] bg-[var(--ink)] px-7 py-4 text-xl font-medium text-[var(--bg)]"
+                  className="group flex items-center gap-3 border border-[var(--ink)] bg-[var(--ink)] px-7 py-4 text-lg font-medium text-[var(--bg)]"
                   whileHover={{ x: 4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
@@ -104,7 +104,7 @@ export default function Home() {
 
               <a
                 href="#journey"
-                className="pf-mono text-xl text-[var(--muted)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:text-[var(--ink)]"
+                className="pf-mono text-lg text-[var(--muted)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:text-[var(--ink)]"
               >
                 see my path ↓
               </a>
@@ -171,7 +171,7 @@ export default function Home() {
             How I got here.
           </motion.h2>
           <motion.p
-            className="mb-16 max-w-2xl text-lg leading-[1.7] text-[var(--muted)] md:text-xl"
+            className="mb-16 max-w-2xl text-sm leading-[1.7] text-[var(--muted)] md:text-xl"
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -222,7 +222,7 @@ export default function Home() {
                     <Link
                       href={node.href}
                       target="_blank"
-                      className="pf-mono group inline-flex items-center gap-1.5 text-lg text-[var(--muted)] transition-colors hover:text-[var(--signal)]"
+                      className="pf-mono group inline-flex items-center gap-1.5 text-sm text-[var(--muted)] transition-colors hover:text-[var(--signal)]"
                     >
                       {node.place}
                       <FaArrowUpRightFromSquare className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -280,7 +280,7 @@ export default function Home() {
                   {node.title}
                 </h3>
 
-                <p className="mt-4 border-l-2 border-[var(--line)] py-0.5 pl-4 text-base leading-[1.8] text-[var(--muted)] md:text-lg">
+                <p className="mt-4 border-l-2 border-[var(--line)] py-0.5 pl-4 text-base leading-[1.8] text-[var(--muted)] md:text-sm">
                   {node.detail}
                 </p>
               </motion.div>
@@ -295,7 +295,7 @@ export default function Home() {
             <h2 className="pf-display text-4xl font-bold tracking-tight md:text-5xl">
               Let&apos;s build something.
             </h2>
-            <p className="mt-4 max-w-xl text-lg leading-[1.8] text-[var(--muted)] md:text-xl">
+            <p className="mt-4 max-w-xl text-sm leading-[1.8] text-[var(--muted)] md:text-xl">
               I’m currently looking for a software engineering opportunity where I can contribute my full-stack experience, learn from experienced people, and keep expanding my skills by building impactful products with a strong team.
               .
             </p>
@@ -304,7 +304,7 @@ export default function Home() {
           <div className="flex flex-col items-start gap-4 md:items-end">
             <Link href="/work">
               <motion.button
-                className="group flex items-center gap-3 border border-[var(--ink)] px-7 py-4 text-base font-medium md:text-lg"
+                className="group flex items-center gap-3 border border-[var(--ink)] px-7 py-4 text-base font-medium md:text-sm"
                 whileHover={{ x: 4 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >

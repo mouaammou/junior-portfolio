@@ -51,7 +51,7 @@ export default function WorkPageDetails({ params }: PageProps) {
           >
             <Link
               href="/work"
-              className="pf-mono group inline-flex items-center gap-2 text-base tracking-[0.18em] text-[var(--muted)] transition-colors duration-300 hover:text-[var(--signal)] md:text-lg"
+              className="pf-mono group inline-flex items-center gap-2 text-sm tracking-[0.16em] text-[var(--muted)] transition-colors duration-300 hover:text-[var(--signal)] md:text-base"
             >
               <FaArrowLeft className="h-3 w-3 transition-transform duration-300 group-hover:-translate-x-1" />
               Back to work
@@ -59,7 +59,7 @@ export default function WorkPageDetails({ params }: PageProps) {
           </motion.div>
 
           <motion.p
-            className="pf-mono mt-10 text-base tracking-[0.28em] text-[var(--signal)] md:text-lg"
+            className="pf-mono mt-10 text-sm tracking-[0.22em] text-[var(--signal)] md:text-base"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -68,7 +68,7 @@ export default function WorkPageDetails({ params }: PageProps) {
           </motion.p>
 
           <motion.h1
-            className="pf-display mt-4 text-5xl font-bold leading-[0.96] tracking-tight md:text-7xl lg:text-8xl"
+            className="pf-display mt-4 text-4xl font-bold leading-[1.02] tracking-tight md:text-6xl lg:text-7xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
@@ -77,7 +77,7 @@ export default function WorkPageDetails({ params }: PageProps) {
           </motion.h1>
 
           <motion.p
-            className="mt-6 max-w-4xl text-xl leading-[1.85] text-[var(--muted)] md:text-2xl lg:text-[2rem]"
+            className="mt-6 max-w-4xl text-lg leading-[1.75] text-[var(--muted)] md:text-xl lg:text-2xl"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
@@ -93,17 +93,17 @@ export default function WorkPageDetails({ params }: PageProps) {
           >
             <div>
               <p className="pf-mono text-sm tracking-[0.22em] text-[var(--muted)] md:text-base">ROLE</p>
-              <p className="mt-2 text-lg font-medium md:text-xl">{project.role}</p>
+              <p className="mt-2 text-base font-medium md:text-lg">{project.role}</p>
             </div>
             <div>
               <p className="pf-mono text-sm tracking-[0.22em] text-[var(--muted)] md:text-base">STATUS</p>
-              <p className="mt-2 text-lg font-medium md:text-xl">{project.website ? "Live" : "Case study"}</p>
+              <p className="mt-2 text-base font-medium md:text-lg">{project.website ? "Live" : "Case study"}</p>
             </div>
             {project.website && (
               <Link
                 href={project.website}
                 target="_blank"
-                className="group inline-flex items-center gap-2 text-base font-medium text-[var(--ink)] transition-colors duration-300 hover:text-[var(--signal)] md:text-lg"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-[var(--ink)] transition-colors duration-300 hover:text-[var(--signal)] md:text-base"
               >
                 Visit site
                 <FaArrowUpRightFromSquare className="h-3 w-3 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -130,7 +130,7 @@ export default function WorkPageDetails({ params }: PageProps) {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <p className="pf-mono text-sm tracking-[0.22em] text-[var(--signal)] md:text-base">ABOUT THE PROJECT</p>
-          <p className="mt-4 text-lg leading-[1.85] text-[var(--muted)] md:text-2xl lg:text-[1.7rem]">
+          <p className="mt-4 text-base leading-[1.8] text-[var(--muted)] md:text-lg lg:text-xl">
             {project.description}
           </p>
         </motion.div>
@@ -143,11 +143,11 @@ export default function WorkPageDetails({ params }: PageProps) {
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-5 md:flex-row md:items-end">
           <div>
             <p className="pf-mono text-sm tracking-[0.22em] text-[var(--muted)] md:text-base">NEXT PROJECT</p>
-            <h2 className="pf-display mt-3 text-4xl font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--signal)] md:text-6xl lg:text-7xl">
+            <h2 className="pf-display mt-3 text-3xl font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--signal)] md:text-5xl lg:text-6xl">
               {nextProject.title}
             </h2>
           </div>
-          <span className="pf-mono inline-flex items-center gap-2 text-base tracking-[0.18em] text-[var(--muted)] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[var(--signal)] md:text-lg lg:text-xl">
+          <span className="pf-mono inline-flex items-center gap-2 text-sm tracking-[0.16em] text-[var(--muted)] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[var(--signal)] md:text-base lg:text-lg">
             View project <FaArrowRightLong className="h-3.5 w-3.5" />
           </span>
         </div>
