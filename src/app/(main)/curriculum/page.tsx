@@ -21,7 +21,7 @@ const CURRI_NODES = [
   {
     id: 3,
     tag: "EDUCATION",
-    title: "Junior Software Engineer — 1337",
+    title: "Junior Software Developer — 1337",
     period: "2022 — 2024",
     description: "Advanced, peer-driven studies in computer science, specializing in software engineering.",
     type: "education",
@@ -29,7 +29,7 @@ const CURRI_NODES = [
   {
     id: 4,
     tag: "EXPERIENCE",
-    title: "Frontend Developer — Exchange Lab",
+    title: "Fullstack Developer — Exchange Lab",
     period: "2024 — 2025",
     description:
       "Built a high-performance school management system on Next.js for the frontend and API layers, backed by Supabase for secure, low-latency data — Postgres, real-time sync, and auth.",
@@ -38,7 +38,7 @@ const CURRI_NODES = [
   {
     id: 5,
     tag: "EXPERIENCE",
-    title: "Software Engineer — OCP Maintenance Solutions",
+    title: "Software Developer — OCP Maintenance Solutions",
     period: "2025 — Present",
     description:
       "Developing a centralized dashboard system that streamlines internal calculations and removes manual data entry, improving operational efficiency and data accuracy.",

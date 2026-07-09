@@ -24,7 +24,7 @@ const journey = [
     place: "Exchange Lab",
     href: "https://www.xchangelab.info/fr",
     title: "Dashboards, platforms, an AI agent",
-    detail: "Real-time stats dashboards, school-management platforms, and a Shopify theme generator with billing and auth built in.",
+    detail: "Real-time stats dashboards, school-management platforms, and a theme generator with billing and auth built in.",
   },
   {
     tag: "Internship",
@@ -61,7 +61,7 @@ export default function Home() {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <motion.p
-              className="pf-mono mb-5 text-base tracking-[0.28em] text-[var(--signal)] md:text-lg"
+              className="pf-mono mb-5 text-sm tracking-[0.24em] text-[var(--signal)] md:text-base"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -69,31 +69,30 @@ export default function Home() {
               {"// FULL-STACK ENGINEER"}
             </motion.p>
 
-            <h1 className="pf-display text-lg font-bold leading-[0.98] tracking-tight md:text-8xl">
+            <h1 className="pf-display text-4xl font-bold leading-[1.02] tracking-tight md:text-6xl lg:text-7xl">
               I build things
               <br />
               that work.
             </h1>
 
             <motion.p
-              className="mt-7 max-w-xl text-sm leading-[1.7] text-[var(--muted)] md:text-[1.6rem]"
+              className="mt-6 max-w-lg text-sm leading-[1.75] text-[var(--muted)] md:text-base"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              I turn messy data and rough ideas into fast, reliable products —
-              with Next.js, React, TypeScript, and Supabase.
+              I’m an entry-level software engineer eager to contribute to building reliable, impactful software while continuing to grow through real-world challenges. I enjoy collaborating with others, learning from experienced teams, and improving products that make a meaningful difference for users.
             </motion.p>
 
             <motion.div
-              className="mt-10 flex flex-wrap items-center gap-6"
+              className="mt-9 flex flex-wrap items-center gap-5"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
             >
               <Link href="/work">
                 <motion.button
-                  className="group flex items-center gap-3 border border-[var(--ink)] bg-[var(--ink)] px-7 py-4 text-lg font-medium text-[var(--bg)]"
+                  className="group flex items-center gap-3 border border-[var(--ink)] bg-[var(--ink)] px-5 py-3 text-sm font-medium text-[var(--bg)] md:px-6 md:py-3.5 md:text-base"
                   whileHover={{ x: 4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
@@ -104,7 +103,7 @@ export default function Home() {
 
               <a
                 href="#journey"
-                className="pf-mono text-lg text-[var(--muted)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:text-[var(--ink)]"
+                className="pf-mono text-sm text-[var(--muted)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:text-[var(--ink)] md:text-base"
               >
                 see my path ↓
               </a>
@@ -117,7 +116,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
           >
-            <div className="relative h-72 w-60 md:h-96 md:w-80">
+            <div className="relative h-64 w-52 md:h-80 md:w-64 lg:h-96 lg:w-72">
               <span className="absolute -left-2 -top-2 h-5 w-5 border-l-2 border-t-2 border-[var(--signal)]" />
               <span className="absolute -right-2 -top-2 h-5 w-5 border-r-2 border-t-2 border-[var(--signal)]" />
               <span className="absolute -bottom-2 -left-2 h-5 w-5 border-b-2 border-l-2 border-[var(--signal)]" />
@@ -140,7 +139,7 @@ export default function Home() {
           {stack.map((tech, i) => (
             <motion.span
               key={tech}
-              className="pf-mono text-sm tracking-[0.22em] text-[var(--muted)] transition-colors hover:text-[var(--signal)] md:text-base"
+              className="pf-mono text-xs tracking-[0.2em] text-[var(--muted)] transition-colors hover:text-[var(--signal)] md:text-sm"
               initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -155,7 +154,7 @@ export default function Home() {
       <section id="journey" className="px-6 py-24 md:px-14 md:py-32">
         <div className="mx-auto max-w-6xl">
           <motion.p
-            className="pf-mono mb-4 text-base text-[var(--signal)] md:text-lg"
+            className="pf-mono mb-4 text-sm text-[var(--signal)] md:text-base"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -163,23 +162,13 @@ export default function Home() {
             {"// BUILD LOG"}
           </motion.p>
           <motion.h2
-            className="pf-display mb-6 text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl"
+            className="pf-display mb-5 text-4xl font-bold leading-[1.04] tracking-tight md:text-6xl"
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             How I got here.
           </motion.h2>
-          <motion.p
-            className="mb-16 max-w-2xl text-sm leading-[1.7] text-[var(--muted)] md:text-xl"
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            Four stops that shaped how I think and build — from first
-            principles to production systems people actually use.
-          </motion.p>
 
           <div className="relative hidden lg:block">
             <div className="absolute left-0 right-0 top-[15px] h-px bg-[var(--line)]" />
@@ -231,11 +220,11 @@ export default function Home() {
                     <p className="pf-mono text-sm text-[var(--muted)]">{node.place}</p>
                   )}
 
-                  <h3 className="pf-display mt-3 text-2xl font-bold leading-[1.15] tracking-tight text-[var(--ink)] md:text-3xl">
+                  <h3 className="pf-display mt-3 text-xl font-bold leading-[1.15] tracking-tight text-[var(--ink)] md:text-2xl">
                     {node.title}
                   </h3>
 
-                  <p className="mt-4 border-l-2 border-[var(--line)] py-0.5 pl-4 text-base leading-[1.8] text-[var(--muted)] md:text-lg">
+                  <p className="mt-4 border-l-2 border-[var(--line)] py-0.5 pl-4 text-sm leading-[1.75] text-[var(--muted)] md:text-base">
                     {node.detail}
                   </p>
                 </motion.div>
@@ -276,11 +265,11 @@ export default function Home() {
                   <p className="pf-mono text-sm text-[var(--muted)]">{node.place}</p>
                 )}
 
-                <h3 className="pf-display mt-3 text-2xl font-bold leading-[1.15] tracking-tight text-[var(--ink)]">
+                <h3 className="pf-display mt-3 text-xl font-bold leading-[1.15] tracking-tight text-[var(--ink)] md:text-2xl">
                   {node.title}
                 </h3>
 
-                <p className="mt-4 border-l-2 border-[var(--line)] py-0.5 pl-4 text-base leading-[1.8] text-[var(--muted)] md:text-sm">
+                <p className="mt-4 border-l-2 border-[var(--line)] py-0.5 pl-4 text-sm leading-[1.75] text-[var(--muted)] md:text-base">
                   {node.detail}
                 </p>
               </motion.div>
@@ -292,10 +281,10 @@ export default function Home() {
       <section id="contact" className="border-t border-[var(--line)] px-6 py-20 md:px-14">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-10 md:flex-row md:items-end">
           <div>
-            <h2 className="pf-display text-4xl font-bold tracking-tight md:text-5xl">
+            <h2 className="pf-display text-3xl font-bold tracking-tight md:text-4xl">
               Let&apos;s build something.
             </h2>
-            <p className="mt-4 max-w-xl text-sm leading-[1.8] text-[var(--muted)] md:text-xl">
+            <p className="mt-4 max-w-xl text-sm leading-[1.75] text-[var(--muted)] md:text-base">
               I’m currently looking for a software engineering opportunity where I can contribute my full-stack experience, learn from experienced people, and keep expanding my skills by building impactful products with a strong team.
               .
             </p>
@@ -304,7 +293,7 @@ export default function Home() {
           <div className="flex flex-col items-start gap-4 md:items-end">
             <Link href="/work">
               <motion.button
-                className="group flex items-center gap-3 border border-[var(--ink)] px-7 py-4 text-base font-medium md:text-sm"
+                className="group flex items-center gap-3 border border-[var(--ink)] px-5 py-3 text-sm font-medium md:px-6 md:py-3.5 md:text-base"
                 whileHover={{ x: 4 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
@@ -312,7 +301,7 @@ export default function Home() {
                 <FaArrowRightLong className="h-3.5 w-3.5" />
               </motion.button>
             </Link>
-            <div className="pf-mono flex gap-5 text-sm tracking-[0.18em] text-[var(--muted)] md:text-base">
+            <div className="pf-mono flex gap-5 text-xs tracking-[0.16em] text-[var(--muted)] md:text-sm">
               <Link href="https://1337.ma/en/" target="_blank" className="hover:text-[var(--signal)]">
                 1337 ↗
               </Link>

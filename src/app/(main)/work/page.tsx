@@ -27,7 +27,7 @@ export default function Work() {
       {/* HERO */}
       <section className="relative px-6 pb-16 pt-24 md:px-14 md:pt-32">
         <motion.p
-          className="pf-mono text-base tracking-[0.28em] text-[var(--signal)] md:text-lg"
+          className="pf-mono text-sm tracking-[0.22em] text-[var(--signal)] md:text-base"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -36,7 +36,7 @@ export default function Work() {
         </motion.p>
 
         <motion.h1
-          className="pf-display mt-5 text-6xl font-bold leading-[0.98] tracking-tight md:text-8xl"
+          className="pf-display mt-5 text-4xl font-bold leading-[1.02] tracking-tight md:text-6xl lg:text-7xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -45,7 +45,7 @@ export default function Work() {
         </motion.h1>
 
         <motion.p
-          className="mt-7 max-w-2xl text-xl leading-[1.75] text-[var(--muted)] md:text-2xl"
+          className="mt-6 max-w-2xl text-sm leading-[1.75] text-[var(--muted)] md:text-base lg:text-lg"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
@@ -55,15 +55,15 @@ export default function Work() {
         </motion.p>
 
         <motion.div
-          className="mt-12 flex flex-wrap gap-x-12 gap-y-6 border-t border-[var(--line)] pt-7"
+          className="mt-10 flex flex-wrap gap-x-12 gap-y-5 border-t border-[var(--line)] pt-6"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           {stats.map((stat) => (
             <div key={stat.label}>
-              <p className="pf-display text-3xl font-bold md:text-4xl">{stat.value}</p>
-              <p className="pf-mono mt-2 text-sm tracking-[0.22em] text-[var(--muted)] md:text-base">
+              <p className="pf-display text-2xl font-bold md:text-3xl">{stat.value}</p>
+              <p className="pf-mono mt-2 text-xs tracking-[0.18em] text-[var(--muted)] md:text-sm">
                 {stat.label.toUpperCase()}
               </p>
             </div>
@@ -86,31 +86,31 @@ export default function Work() {
               >
                 <Link
                   href={`/work/${encodeURIComponent(data.slug)}`}
-                  className="group grid items-center gap-8 py-16 md:grid-cols-12 md:gap-10 md:py-24"
+                  className="group grid items-center gap-8 py-14 md:grid-cols-12 md:gap-10 md:py-20"
                 >
                   <div className={`md:col-span-5 ${isEven ? "" : "md:order-2"}`}>
-                    <span className="pf-mono text-base tracking-[0.22em] text-[var(--signal)] md:text-lg">
+                    <span className="pf-mono text-xs tracking-[0.18em] text-[var(--signal)] md:text-sm">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <h2 className="pf-display mt-4 text-3xl font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--signal)] md:text-5xl">
+                    <h2 className="pf-display mt-4 text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--signal)] md:text-4xl">
                       {data.title}
                     </h2>
 
-                    <p className="mt-4 max-w-md text-lg leading-[1.8] text-[var(--muted)] md:text-xl">
+                    <p className="mt-3 max-w-md text-sm leading-[1.7] text-[var(--muted)] md:text-base">
                       {data.tagline}
                     </p>
 
-                    <div className="mt-6 flex flex-wrap gap-3">
-                      <span className="pf-mono rounded-full border border-[var(--line)] px-3.5 py-1.5 text-sm tracking-[0.16em] text-[var(--muted)] md:text-base">
+                    <div className="mt-5 flex flex-wrap gap-3">
+                      <span className="pf-mono rounded-full border border-[var(--line)] px-3 py-1 text-xs tracking-[0.14em] text-[var(--muted)] md:text-sm">
                         {data.role}
                       </span>
-                      <span className="pf-mono rounded-full border border-[var(--line)] px-3.5 py-1.5 text-sm tracking-[0.16em] text-[var(--muted)] md:text-base">
+                      <span className="pf-mono rounded-full border border-[var(--line)] px-3 py-1 text-xs tracking-[0.14em] text-[var(--muted)] md:text-sm">
                         {data.website ? "Live ↗" : "Case study"}
                       </span>
                     </div>
 
-                    <div className="mt-8 inline-flex items-center gap-2 text-base font-medium text-[var(--ink)] transition-all duration-300 md:text-lg md:opacity-0 md:-translate-x-2 md:group-hover:opacity-100 md:group-hover:translate-x-0">
+                    <div className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[var(--ink)] transition-all duration-300 md:opacity-0 md:-translate-x-2 md:group-hover:opacity-100 md:group-hover:translate-x-0">
                       View project <FaArrowRightLong className="h-3.5 w-3.5" />
                     </div>
                   </div>
@@ -146,17 +146,17 @@ export default function Work() {
       <section className="border-t border-[var(--line)] px-6 py-20 md:px-14">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div>
-            <h2 className="pf-display text-4xl font-bold tracking-tight md:text-6xl">
+            <h2 className="pf-display text-3xl font-bold tracking-tight md:text-4xl">
               Got something to build?
             </h2>
-            <p className="mt-4 max-w-xl text-lg leading-[1.8] text-[var(--muted)] md:text-xl">
+            <p className="mt-4 max-w-xl text-sm leading-[1.75] text-[var(--muted)] md:text-base">
               I&apos;m always open to new projects and collaborations.
             </p>
           </div>
 
           <Link href="/#contact">
             <motion.button
-              className="group flex items-center gap-3 border border-[var(--ink)] px-7 py-4 text-base font-medium md:text-lg"
+              className="group flex items-center gap-3 border border-[var(--ink)] px-5 py-3 text-sm font-medium md:px-6 md:py-3.5 md:text-base"
               whileHover={{ x: 4 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >

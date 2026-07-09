@@ -1,4 +1,4 @@
-# 👨‍💻 Mouad Ouaammou — Software Engineer Portfolio
+# 👨‍💻 Mouad Ouaammou — Software Developer Portfolio
 
 > Full Stack Developer specializing in **Next.js**, **React**, and modern web technologies. Building fast, scalable, and user-focused applications with clean, maintainable code.
 
@@ -17,7 +17,7 @@ Hi! I'm **Mouad Ouaammou**, a passionate developer with **2+ years of experience
 
 ## 💼 Professional Experience
 
-### 🏢 **Software Engineer** — [OCP Maintenance Solutions](https://ocp-ms.com/)
+### 🏢 **Software Developer** — [OCP Maintenance Solutions](https://ocp-ms.com/)
 *Sep 2025 – Present | Casablanca, Morocco*
 
 - 📊 Built an **internal analytics dashboard** transforming Excel datasets into interactive visual reports
@@ -43,7 +43,7 @@ Hi! I'm **Mouad Ouaammou**, a passionate developer with **2+ years of experience
 ### 🏢 **Full Stack Web Developer** — [Codro.dev](https://www.codro.dev/)
 *Jun 2023 – Jul 2024 | Remote*
 
-- 🤖 Built an **AI-powered agent** for automated Shopify theme generation
+- 🤖 Built an **AI-powered agent** for automated  theme generation
   - Technologies: **Next.js**, **Supabase**, **V0 API**, **Gemini API**
 - 💳 Implemented **subscription/payment logic** with usage tracking and automated billing
 - 🔐 Ensured secure authentication and best practices for user data handling

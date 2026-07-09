@@ -20,12 +20,12 @@ const sourceCodePro = Source_Code_Pro({
 
 
 export const metadata: Metadata = {
-  title: "Mouad Ouaammou — Software Engineer Portfolio",
+  title: "Mouad Ouaammou — Software Developer Portfolio",
   description:
-    "Full Stack Software Engineer specializing in web development, cloud technologies, and scalable systems. Explore my projects, experience, and technical skills.",
+    "Full Stack Software Developer specializing in web development, cloud technologies, and scalable systems. Explore my projects, experience, and technical skills.",
   keywords: [
     "Mouad Ouaammou",
-    "Software Engineer",
+    "Software Developer",
     "Full Stack Developer",
     "Web Developer",
     "Next.js Portfolio",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Mouad Ouaammou" }],
   creator: "Mouad Ouaammou",
   openGraph: {
-    title: "Mouad Ouaammou — Software Engineer",
+    title: "Mouad Ouaammou — Software Developer",
     description:
       "Portfolio showcasing projects, experience, and skills in full stack development and cloud technologies.",
     url: "https://github.com/mouaammou",
