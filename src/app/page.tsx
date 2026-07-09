@@ -81,7 +81,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              I’m an entry-level software engineer eager to contribute to building reliable, impactful software while continuing to grow through real-world challenges. I enjoy collaborating with others, learning from experienced teams, and improving products that make a meaningful difference for users.
+              I’m a software engineer with practical experience building and delivering web applications, particularly with Next.js, and I’m looking to contribute to products that create real value for users and businesses. I’m motivated by collaboration, continuous learning, and the opportunity to work with strong teams to build reliable, high-quality software.
             </motion.p>
 
             <motion.div
