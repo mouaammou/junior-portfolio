@@ -26,9 +26,11 @@ export default function VantaBackground() {
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color: 0x9ca3af ,
-          size: 2,
-          spacing: 20.00,
+          color: 0x6b7280,
+          backgroundColor: 0x222222,
+          backgroundAlpha: 1.00,
+          size: 1.50,
+          spacing: 30.00,
           showLines: false,
         })
       }
@@ -56,5 +58,5 @@ export default function VantaBackground() {
     }
   }, [])
 
-  return <div ref={vantaRef} className="pointer-events-none fixed inset-10 -z-10" />
+  return <div ref={vantaRef} className="pointer-events-none fixed inset-0 -z-10" />
 }

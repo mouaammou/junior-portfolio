@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Source_Code_Pro } from "next/font/google";
 import "@/app/styles/globals.css";
 import VantaBackground from "@/components/ui/vantaBackground";
-import Sidebar from "@/components/layout/sidebar";
+import Navbar from "@/components/layout/navbar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -60,11 +60,9 @@ export default function RootLayout({
       <body>
         {/* vanta background effect */}
         <VantaBackground />
-        {/* sidebar */}
-        <Sidebar />
-        <div className="ml-14">
-          {children}
-        </div>
+        {/* top navbar */}
+        <Navbar />
+        {children}
       </body>
     </html>
   );

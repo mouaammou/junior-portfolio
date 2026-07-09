@@ -1,195 +1,206 @@
-'use client';
-
-import React, { useEffect, useRef, useState } from 'react';
-import { GraduationCap, Briefcase, Code } from 'lucide-react';
+import { GraduationCap, Briefcase } from "lucide-react";
 import * as motion from "motion/react-client";
 
 const CURRI_NODES = [
-   {
-      id: 1,
-      year: 2018,
-      title: "Baccalaureate in Physical Sciences",
-      period: "2018",
-      description: "Focused on the fundamentals of Physical Sciences and Mathematical Theory",
-      type: "education",
-      icon: "education"
-   },
-   {
-      id: 2,
-      year: 2019,
-      title: "Bachelor in Mathematics and Computer Science - SMI",
-      period: "2019 - 2021",
-      description: "Study Discrete Mathematics and Algorithmic Theory for Computer Science applications.",
-      type: "education",
-      icon: "education"
-   },
-   {
-      id: 3,
-      year: 2022,
-      title: "Junior Software Engineer - 1337",
-      period: "2022 - 2024",
-      description: "Advanced studies in computer science, specializing in software engineering.",
-      type: "education",
-      icon: "education"
-   },
-   {
-      id: 4,
-      year: 2024,
-      title: "Frontend Developer - Exchange Lab",
-      period: "2024 - 2025",
-      description: "Develop a high-performance, School Management System using the Next.js framework for the frontend and API layers. The system will rely on Supabase for secure, low-latency data operations, including PostgreSQL database management, real-time synchronization, and authentication.",
-      type: "experience",
-      icon: "work"
-   },
-   {
-      id: 5,
-      year: 2025,
-      title: "Software Engineer - OCP MAINTENCE SOLUTIONS",
-      period: "2025 - Present",
-      description: "Develop a centralized Dashboard System for OCP Maintenance Solutions designed to streamline internal calculations and eliminate reliance on manual data entry, thereby improving operational efficiency and data accuracy.",
-      type: "experience",
-      icon: "work"
-   },
+  {
+    id: 1,
+    tag: "EDUCATION",
+    title: "Baccalaureate in Physical Sciences",
+    period: "2021",
+    description: "Focused on the fundamentals of Physical Sciences and Mathematical Theory.",
+    type: "education",
+  },
+  {
+    id: 2,
+    tag: "EDUCATION",
+    title: "Bachelor in Mathematics and Computer Science — SMI",
+    period: "2019 — 2021",
+    description: "Studied discrete mathematics and algorithmic theory for computer science applications.",
+    type: "education",
+  },
+  {
+    id: 3,
+    tag: "EDUCATION",
+    title: "Junior Software Engineer — 1337",
+    period: "2022 — 2024",
+    description: "Advanced, peer-driven studies in computer science, specializing in software engineering.",
+    type: "education",
+  },
+  {
+    id: 4,
+    tag: "EXPERIENCE",
+    title: "Frontend Developer — Exchange Lab",
+    period: "2024 — 2025",
+    description:
+      "Built a high-performance school management system on Next.js for the frontend and API layers, backed by Supabase for secure, low-latency data — Postgres, real-time sync, and auth.",
+    type: "experience",
+  },
+  {
+    id: 5,
+    tag: "EXPERIENCE",
+    title: "Software Engineer — OCP Maintenance Solutions",
+    period: "2025 — Present",
+    description:
+      "Developing a centralized dashboard system that streamlines internal calculations and removes manual data entry, improving operational efficiency and data accuracy.",
+    type: "experience",
+    current: true,
+  },
 ];
 
+const stats = [
+  { label: "Since", value: "2021" },
+  { label: "Education", value: String(CURRI_NODES.filter((n) => n.type === "education").length).padStart(2, "0") },
+  { label: "Experience", value: String(CURRI_NODES.filter((n) => n.type === "experience").length).padStart(2, "0") },
+];
 
-const Curriculum = () => {
-   const [activeNode, setActiveNode] = useState<number>(1);
-   const openingInterval = useRef<NodeJS.Timeout | null>(null);
+function NodeIcon({ type }: { type: string }) {
+  const Icon = type === "education" ? GraduationCap : Briefcase;
+  return <Icon className="h-5 w-5 text-[var(--signal)]" />;
+}
 
-   const getNodeIcon = (type: string) => {
-      switch (type) {
-         case 'education': return <GraduationCap className="h-6 w-6 text-yellow-300" />;
-         case 'experience': return <Briefcase className="h-6 w-6 text-yellow-300" />;
-         default: return <Code className="h-6 w-6 text-yellow-300" />;
-      }
-   };
+export default function Curriculum() {
+  return (
+    <div className="pf-root relative min-h-screen text-[var(--ink)]">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap');
+        .pf-root { --bg:#122A43; --surface:#1B3A56; --line:#2E4E6E; --ink:#F3EFE4; --muted:#93A6BC; --signal:#FF8A42;
+          font-family:'Inter',ui-sans-serif,system-ui,sans-serif; }
+        .pf-display { font-family:'Space Grotesk',ui-sans-serif,sans-serif; }
+        .pf-mono { font-family:'JetBrains Mono',ui-monospace,monospace; }
+        @media (prefers-reduced-motion: reduce) {
+          .pf-root * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+      `}</style>
 
-   useEffect(() => {
-      openingInterval.current = setInterval(() => {
-         let randomIndex = Math.floor(Math.random() * CURRI_NODES.length) + 1;
-         setActiveNode(randomIndex);
-      }, 5000);
+      {/* HERO */}
+      <section className="relative px-6 pb-16 pt-24 md:px-14 md:pt-32">
+        <motion.p
+          className="pf-mono text-base tracking-wide text-[var(--signal)] md:text-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          {"// CURRICULUM"}
+        </motion.p>
 
-      return (() => {
-         if (openingInterval.current) {
-            clearInterval(openingInterval.current);
-         }
-      })
-   }, [])
+        <motion.h1
+          className="pf-display mt-5 text-6xl font-bold leading-[1.02] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+        >
+          Curriculum.
+        </motion.h1>
 
-   const handleCardOpening = (id: number) => {
-      setActiveNode(activeNode === id ? 1 : id)
-      if (openingInterval.current) {
-         clearInterval(openingInterval.current);
-         openingInterval.current = null;
-      }
-   }
+        <motion.p
+          className="mt-7 max-w-2xl text-xl leading-relaxed text-[var(--muted)] md:text-2xl"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+        >
+          My education and professional journey — from first principles to
+          production systems.
+        </motion.p>
 
-   return (
-      <div className="flex flex-col lg:ml-52 mb-30 overflow-x-hidden">
-         <motion.header 
-            className='ml-2 sm:ml-9'
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-         >
-            <h1 className="text-4xl md:text-big font-black my-4 mt-20">Curriculum</h1>
-            <motion.p 
-               className="tiri_8 relative ml-10 md:text-2xl"
-               initial={{ opacity: 0, x: -20 }}
-               animate={{ opacity: 1, x: 0 }}
-               transition={{ duration: 0.6, delay: 0.2 }}
-            >
-               my education & professional journey
-            </motion.p>
-         </motion.header>
-
-         <main className="mt-16 px-4">
-            {/* Timeline */}
-            <div className="relative">
-               {/* Vertical line */}
-               <motion.div 
-                  className="absolute left-4 lg:left-1/2 h-full w-1 bg-gradient-to-b from-yellow-300 to-yellow-700/70 transform -translate-x-1/2"
-                  initial={{ scaleY: 0 }}
-                  animate={{ scaleY: 1 }}
-                  transition={{ duration: 1, ease: "easeOut" }}
-                  style={{ transformOrigin: "top" }}
-               />
-
-               {/* Timeline nodes */}
-               {CURRI_NODES.map((node, index) => (
-                  <motion.div
-                     key={node.id}
-                     className={`flex mb-12 relative ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}
-                     initial={{ opacity: 0, y: 30 }}
-                     whileInView={{ opacity: 1, y: 0 }}
-                     viewport={{ once: true, amount: 0.3 }}
-                     transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  >
-                     {/* Date indicator */}
-                     <motion.div 
-                        className="lg:w-1/2 mb-4 lg:mb-0 px-8 absolute -top-6"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
-                     >
-                        <span className="font-semibold text-yellow-300">{node.period}</span>
-                     </motion.div>
-
-                     {/* Node circle */}
-                     <motion.div 
-                        className="absolute left-4 lg:left-1/2 w-8 h-8 bg-background
-                           flex items-center justify-center transform -translate-x-1/2 z-10"
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ 
-                           type: "spring", 
-                           stiffness: 300, 
-                           damping: 20,
-                           delay: index * 0.1 + 0.3 
-                        }}
-                        whileHover={{ scale: 1.2, rotate: 360 }}
-                     >
-                        {getNodeIcon(node.type)}
-                     </motion.div>
-
-                     {/* Content card */}
-                     <div className={`lg:w-1/2 pl-12 lg:pl-8 ${index % 2 === 0 ? 'lg:pr-8 lg:text-right' : ''}`}>
-                        <motion.div
-                           className="p-4 m-2 bg-background border border-yellow-400/30 rounded-lg shadow-lg hover:shadow-yellow-400/20 
-                           transition-all duration-300 cursor-pointer text-left"
-                           onClick={() => handleCardOpening(node.id)}
-                           whileHover={{ 
-                              scale: 1.02,
-                              borderColor: "rgba(250, 204, 21, 0.6)",
-                              boxShadow: "0 0 20px rgba(250, 204, 21, 0.3)"
-                           }}
-                           transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                        >
-                           <h3 className="md:text-xl font-semibold my-1">{node.title}</h3>
-                           <motion.div
-                              className="overflow-hidden"
-                              initial={false}
-                              animate={{
-                                 maxHeight: activeNode === node.id ? 160 : 0,
-                                 opacity: activeNode === node.id ? 1 : 0,
-                                 marginTop: activeNode === node.id ? 8 : 0
-                              }}
-                              transition={{ duration: 0.3, ease: "easeInOut" }}
-                           >
-                              <p className="text-gray-400">{node.description}</p>
-                           </motion.div>
-                        </motion.div>
-                     </div>
-                  </motion.div>
-               ))}
+        <motion.div
+          className="mt-14 flex flex-wrap gap-x-14 gap-y-6 border-t border-[var(--line)] pt-8"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          {stats.map((stat) => (
+            <div key={stat.label}>
+              <p className="pf-display text-4xl font-bold md:text-5xl">{stat.value}</p>
+              <p className="pf-mono mt-1 text-sm tracking-widest text-[var(--muted)]">
+                {stat.label.toUpperCase()}
+              </p>
             </div>
-         </main>
-      </div>
-   );
-};
+          ))}
+        </motion.div>
+      </section>
 
-export default Curriculum;
+      {/* TIMELINE */}
+      <section className="relative px-6 pb-28 md:px-14">
+        <div className="mx-auto max-w-6xl">
+          {/* desktop horizontal timeline */}
+          <div className="relative hidden lg:block">
+            <div className="absolute left-0 right-0 top-[15px] h-px bg-[var(--line)]" />
+            <motion.div
+              className="absolute left-0 top-[15px] h-px w-full origin-left bg-[var(--signal)]"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+            />
+            <div className="grid grid-cols-5 gap-8">
+              {CURRI_NODES.map((node, i) => (
+                <motion.div
+                  key={node.id}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <div className="relative mb-6 h-8">
+                    <span
+                      className={`absolute left-0 top-0 h-2 w-2 rounded-full ${
+                        node.current ? "bg-[var(--signal)]" : "bg-[var(--muted)]"
+                      }`}
+                    />
+                    {node.current && (
+                      <motion.span
+                        className="absolute left-0 top-0 h-2 w-2 rounded-full bg-[var(--signal)]"
+                        animate={{ scale: [1, 2.4], opacity: [0.6, 0] }}
+                        transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut" }}
+                      />
+                    )}
+                  </div>
+
+                  <p className="pf-mono mb-2 flex items-center gap-2 text-sm tracking-widest text-[var(--signal)]">
+                    <NodeIcon type={node.type} />
+                    {node.tag}
+                  </p>
+                  <p className="pf-mono text-sm text-[var(--muted)]">{node.period}</p>
+                  <p className="pf-display mt-2 text-xl font-bold leading-snug md:text-2xl">{node.title}</p>
+                  <p className="mt-3 text-base leading-relaxed text-[var(--muted)]/90">
+                    {node.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* mobile / tablet vertical timeline */}
+          <div className="relative space-y-10 lg:hidden">
+            <div className="absolute bottom-2 left-[3px] top-2 w-px bg-[var(--line)]" />
+            {CURRI_NODES.map((node, i) => (
+              <motion.div
+                key={node.id}
+                className="relative pl-8"
+                initial={{ opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <span
+                  className={`absolute left-0 top-1.5 h-2 w-2 rounded-full ${
+                    node.current ? "bg-[var(--signal)]" : "bg-[var(--muted)]"
+                  }`}
+                />
+                <p className="pf-mono mb-2 flex items-center gap-2 text-sm tracking-widest text-[var(--signal)]">
+                  <NodeIcon type={node.type} />
+                  {node.tag}
+                </p>
+                <p className="pf-mono text-sm text-[var(--muted)]">{node.period}</p>
+                <p className="pf-display mt-2 text-2xl font-bold leading-snug">{node.title}</p>
+                <p className="mt-3 text-base leading-relaxed text-[var(--muted)]/90">
+                  {node.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

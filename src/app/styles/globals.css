@@ -255,45 +255,6 @@ p, a, input , li{
   @apply font-source-code-pro
 }
 
-.top-sidebar > .title > span {
-  @apply font-bold;
-}
-
-.sidebar::after {
-  content: '';
-  width: 3px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: #3c3c3c;
-}
-
-.underline_effect::after {
-  content: '';
-  width: 0%;
-  height: 1px;
-  background-color: aliceblue;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: width 300ms ease-in-out;
-}
-.underline_effect:hover::after {
-  width: 100%;
-}
-
-.tiri_8::before {
-    content: "";
-    background-color: #fff;
-    border-radius: 6.25rem;
-    height: 2px;
-    left: -28px;
-    position: absolute;
-    top: 15px;
-    width: 18px;
-}
-
 .no-scrollbar {
   -ms-overflow-style: none; /* IE/Edge */
   scrollbar-width: none;    /* Firefox */
